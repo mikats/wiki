@@ -61,11 +61,9 @@ RUN chmod +x /scripts/start*.sh
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN cp -f /scripts/start.sh /etc/my_init.d
 
-# Use baseimage-docker's init system.
-#CMD ["/sbin/my_init"]
-CMD ["/etc/my_init.d"]
+CMD ["/bin/bash","/scripts/start.sh"]
+
 
 
 
