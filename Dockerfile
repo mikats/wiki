@@ -24,7 +24,7 @@ RUN chmod u+x /tmp/confluence.bin
 ADD response.varfile /tmp/response.varfile
 # 4. run the installer 
 RUN /tmp/confluence.bin -q -varfile /tmp/response.varfile
-###VOLUME ["/var/atlassian/application-data/confluence"]
+VOLUME ["/var/atlassian/application-data/confluence"]
 EXPOSE 8090
 
 # Ensure UTF-8
@@ -57,14 +57,15 @@ RUN echo "host    all    all    0.0.0.0/0    md5" >> /etc/postgresql/9.3/main/pg
 EXPOSE 5432
 ADD scripts /scripts
 RUN chmod +x /scripts/start*.sh
-RUN touch /firstrun
+#RUN touch /firstrun
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN cp -f /scripts/start.sh /etc/my_init.d
 
 # Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+#CMD ["/sbin/my_init"]
+CMD ["/etc/my_init.d"]
 
 
 
