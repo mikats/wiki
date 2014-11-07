@@ -1,2 +1,2 @@
 sudo chown ubuntu -R data
-docker build -t mikats/wiki .
+sudo docker build -t mikats/wiki .
