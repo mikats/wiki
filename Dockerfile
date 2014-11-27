@@ -17,7 +17,7 @@ RUN apt-get install -y oracle-java7-installer
 
 # Install confluence
 # 1. download the archive
-RUN wget -O /tmp/confluence.bin http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.4.4-x64.bin
+RUN wget -O /tmp/confluence.bin http://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-5.6.4-x64.bin
 # 2. make it executable
 RUN chmod u+x /tmp/confluence.bin
 # 3. set the response.varfile of the installer for offline and quiet installation
