@@ -7,7 +7,7 @@ if [ ! -d "${PWD}/data" ]; then
 fi
 
 sudo docker run -d --name "wiki" \
-	-p 80:8090 -p 5432:5432 \
+	-p 80:8090 \
 	-v ${PWD}/data/confluence-data:/var/atlassian/application-data/confluence \
 	-v ${PWD}/data/confluence-postgresql:/var/data/postgresql \
 	-e DB="confluence" \
