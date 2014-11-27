@@ -1,6 +1,6 @@
 FROM ubuntu:14.04
 MAINTAINER Mika Eriksson
-ENV REFRESHED_AT 2014-11-06
+ENV REFRESHED_AT 2014-11-26
 
 # Set correct environment variables.
 ENV HOME /root
